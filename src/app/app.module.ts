@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { PageNotFoundAppComponent } from './page-not-found-app/page-not-found-app.component';
 
 import { StoryModule } from './story/story.module';
+import { UnderconstructionAppComponent } from './underconstruction-app/underconstruction-app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundAppComponent
+    PageNotFoundAppComponent,
+    UnderconstructionAppComponent
   ],
   imports: [
     BrowserModule,

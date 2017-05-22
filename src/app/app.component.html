@@ -1,3 +1,32 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container-fluid">
+    <header>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a routerLink="/" class="navbar-brand" routerLinkActive="active">STORYMIRROR</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a routerLink="/inprogress" routerLinkActive="active">SUBMIT</a></li>
+            <li><a routerLink="/inprogress" routerLinkActive="active">Stories</a></li>
+            <li><a routerLink="/inprogress" routerLinkActive="active">Poems</a></li>
+            <li><a routerLink="/inprogress" routerLinkActive="active">MirrorQuotes</a></li>
+            <li><a routerLink="/inprogress" routerLinkActive="active">Art</a></li>
+            <li class="navbar-right"><a (click)="logout()">Logout</a></li>
+          </ul>
+
+        </div>
+      </nav>
+    </header>
+    <footer class="footer navbar-fixed-bottom">
+      <div class="container text-center">
+        Copyright &copy; <a href='https://www.linkedin.com/in/arghyasaha/'>argo</a> 2017
+      </div>
+    </footer>
+
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+</div>
+
