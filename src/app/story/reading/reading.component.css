@@ -1,0 +1,21 @@
+body{
+  padding-top:100px;
+}
+
+.static_parent
+{
+  position: fixed;
+  max-height:400px;
+  overflow:hidden;
+}
+
+.readable_content_overflow
+{
+  max-height:400px;
+  overflow:scroll;
+}
+
+.nopadding
+{
+  padding:0px !important;
+}
