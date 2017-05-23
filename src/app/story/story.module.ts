@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 import { HomeAppComponent } from './home-app/home-app.component';
 import { ReadingComponent } from './reading/reading.component';
 import { StoriesRouting } from './story-routing.module';
-import {MaterialModule, MdNativeDateModule} from '@angular/material';
+import {MaterialModule, MdNativeDateModule, MdCardModule} from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     StoriesRouting,
-    MdNativeDateModule
+    MdNativeDateModule,
+    MdCardModule
   ],
   declarations: [HomeAppComponent, ReadingComponent]
 })

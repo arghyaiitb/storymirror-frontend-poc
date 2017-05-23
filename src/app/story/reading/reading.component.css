@@ -1,21 +1,29 @@
 body{
-  padding-top:100px;
+  padding-top:65px;
 }
 
 .static_parent
 {
   position: fixed;
-  max-height:400px;
+  max-height:700px;
   overflow:hidden;
 }
 
 .readable_content_overflow
 {
-  max-height:400px;
+  max-height:700px;
   overflow:scroll;
 }
 
 .nopadding
 {
   padding:0px !important;
+}
+
+.author-profile {
+  background-color: lightblue;
+}
+
+.social-activity {
+  background-color: lightblue;
 }
