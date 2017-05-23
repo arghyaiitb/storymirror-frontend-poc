@@ -13,6 +13,12 @@ body{
 {
   max-height:700px;
   overflow:scroll;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: justify;
+  line-height: 1.2em;
+  font-size: 18px;
+
 }
 
 .nopadding
@@ -27,3 +33,9 @@ body{
 .social-activity {
   background-color: lightblue;
 }
+
+.profile-pic{
+  width: 150px;
+
+}
+
