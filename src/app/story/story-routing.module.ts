@@ -17,7 +17,7 @@ const StoryRoutes: Routes = [
         component: HomeAppComponent
       },
       {
-        path: 'reading',
+        path: 'reading/:id',
         component: ReadingComponent
       }
     ]

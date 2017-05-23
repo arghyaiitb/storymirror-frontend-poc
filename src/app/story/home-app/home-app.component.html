@@ -8,8 +8,9 @@
     <md-card-content>
         {{ template.story_short }}
     </md-card-content>
+    {{ template.serial_no }}
     <md-card-actions>
-      <button md-button routerLink="reading">read more</button>
+      <button md-button [routerLink]="['reading',  template.serial_no ]">read more</button>
     </md-card-actions>
   </md-card>
 </a>

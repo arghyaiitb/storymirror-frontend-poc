@@ -5,6 +5,8 @@ import { ReadingComponent } from './reading/reading.component';
 import { StoriesRouting } from './story-routing.module';
 import {MaterialModule, MdNativeDateModule, MdCardModule} from '@angular/material';
 
+import { PresentStory } from './reading/reading.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -13,6 +15,7 @@ import {MaterialModule, MdNativeDateModule, MdCardModule} from '@angular/materia
     MdNativeDateModule,
     MdCardModule
   ],
-  declarations: [HomeAppComponent, ReadingComponent]
+  declarations: [HomeAppComponent, ReadingComponent],
+  providers: [PresentStory]
 })
 export class StoryModule { }
