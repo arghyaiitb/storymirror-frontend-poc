@@ -1,10 +1,11 @@
 import {Component, ViewEncapsulation, OnInit, } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PresentStory } from './reading.service';
-import { Contact } from './reading.model';
+import { Contact } from './read';
 
 import {Observable} from 'rxjs/Rx';
 import { Inject } from '@angular/core';
+import { Post } from './read';
 
 @Component({
   selector: 'app-reading',
@@ -13,13 +14,17 @@ import { Inject } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class ReadingComponent implements OnInit {
-  public contact: Promise<string[]>;
+  private posts: Post[] = [];
+  private errorMessage: any;
 
-  constructor(@Inject(PresentStory) private contactsService: PresentStory) { }
+  constructor( private contactsService: PresentStory) { }
 
   ngOnInit() {
-    this.contact = this.contactsService.getContact();
-    console.log(this.contact);
+    this.contactsService.getData()
+      .subscribe(
+        posts => this.posts = posts,
+        error => this.errorMessage = <any>error);
+    console.log(this.posts);
   }
 
 }
