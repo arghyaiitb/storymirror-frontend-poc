@@ -11,6 +11,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { Inject } from '@angular/core';
 
+// import { Hero } from './reading.model';
 
 export class PresentStory {
   contacts = [
@@ -21,11 +22,12 @@ export class PresentStory {
   public response: any[];
 
 
-  constructor(@Inject(Jsonp) public jsonp: Jsonp) {
+  constructor(@Inject(Http) private http: Http) {
   }
-    getContact() {
-      return this.jsonp
-        .get('http://localhost:3000/data/')
-        .map(response => <string[]> response.json()[1]);
+    getContact(): Promise<String[]> {
+    console.log('ontrol is here');
+      return this.http.get('http://127.0.0.1:3000/data1/')
+        .toPromise()
+        .then(response => <string[]> response.json()[1]);
     }
 }

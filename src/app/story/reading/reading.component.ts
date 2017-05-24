@@ -13,12 +13,13 @@ import { Inject } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class ReadingComponent implements OnInit {
-  public contact: Observable<string[]>;
+  public contact: Promise<string[]>;
 
-  constructor(@Inject(PresentStory) private contactsService: PresentStory, private route: ActivatedRoute) { }
+  constructor(@Inject(PresentStory) private contactsService: PresentStory) { }
 
   ngOnInit() {
-    this.contactsService.getContact();
+    this.contact = this.contactsService.getContact();
+    console.log(this.contact);
   }
 
 }
