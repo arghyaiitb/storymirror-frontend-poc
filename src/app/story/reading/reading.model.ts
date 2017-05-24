@@ -5,3 +5,12 @@ export interface Contact {
   name: string;
   id: number;
 }
+
+
+export class Hero {
+  constructor(
+    public _id: string,
+    public name: string,
+    public __v: number
+  ) { }
+}
