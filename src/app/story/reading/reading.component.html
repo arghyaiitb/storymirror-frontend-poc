@@ -1,8 +1,9 @@
 <md-sidenav-container class="static_parent">
   <md-sidenav #sidenav mode="side" opened="true" align="start" class="author-profile nopadding">
     <img class="profile-pic" src="https://material.angular.io/assets/img/examples/shiba2.jpg">
-    <h4>{{posts[0].title}}</h4>
-
+    <div *ngIf="posts && posts.length > 0">
+      <h4>{{posts[0].title}}</h4>
+    </div>
   </md-sidenav>
 
   <md-sidenav #sidenav mode="side" opened="true" align="end" class="social-activity nopadding">
@@ -10,7 +11,7 @@
   </md-sidenav>
 
 
-  <div class="text readable_content_overflow">
+  <div *ngIf="posts && posts.length > 0" class="text readable_content_overflow">
     <h3>{{posts[0].title}}</h3>
     {{posts[0].body }}
 
