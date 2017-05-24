@@ -9,6 +9,6 @@ export interface Contact {
 
 export interface Post {
   _id: string;
-  name: string;
-  __v: number;
+  title: string;
+  body: string;
 }

@@ -17,10 +17,10 @@ export class ReadingComponent implements OnInit {
   private posts: Post[] = [];
   private errorMessage: any;
 
-  constructor( private contactsService: PresentStory) { }
+  constructor( private contactsService: PresentStory, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.contactsService.getData()
+    this.contactsService.getData(this.route.snapshot.params.id)
       .subscribe(
         posts => this.posts = posts,
         error => this.errorMessage = <any>error);

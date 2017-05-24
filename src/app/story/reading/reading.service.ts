@@ -15,7 +15,7 @@ export class PresentStory {
   constructor(private http: Http) {
   }
 
-  getData(): Observable<Post[]> {
+  getData(id): Observable<Post[]> {
     return this.http.get('http://127.0.0.1:3000/data')
       .map(this.extractData)
       .catch(this.handleError);
