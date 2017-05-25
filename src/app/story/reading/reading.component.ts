@@ -5,7 +5,7 @@ import { Contact } from './read';
 
 import {Observable} from 'rxjs/Rx';
 import { Inject } from '@angular/core';
-import { Post } from './read';
+import { Story,User } from './read';
 
 @Component({
   selector: 'app-reading',
@@ -14,17 +14,31 @@ import { Post } from './read';
   encapsulation: ViewEncapsulation.None,
 })
 export class ReadingComponent implements OnInit {
-  private posts: Post[] = [];
+  private posts: Story[] = [];
+  private userdetails: User[] = [];
   private errorMessage: any;
 
   constructor( private contactsService: PresentStory, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.contactsService.getData(this.route.snapshot.params.id)
+  this.story();
+  this.user();
+  }
+
+  story() {
+    console.log(this.route.snapshot.url[1].path);
+    this.contactsService.getData(this.route.snapshot.url[1].path)
       .subscribe(
         posts => this.posts = posts,
         error => this.errorMessage = <any>error);
     console.log(this.posts);
+  }
+  user() {
+    this.contactsService.getUser(this.route.snapshot.params.id)
+      .subscribe(
+        userdetails => this.userdetails = userdetails,
+        error => this.errorMessage = <any>error);
+    console.log(this.userdetails);
   }
 
 }

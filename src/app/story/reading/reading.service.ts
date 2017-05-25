@@ -8,15 +8,23 @@ import {Observable} from 'rxjs/Observable';
 
 
 
- import { Post } from './read';
+ import { Story, User } from './read';
 
 @Injectable()
 export class PresentStory {
   constructor(private http: Http) {
   }
 
-  getData(id): Observable<Post[]> {
-    return this.http.get('http://127.0.0.1:3000/data')
+  getData(id): Observable<Story[]> {
+    const api_point = 'http://127.0.0.1:3000/data/' + id;
+    return this.http.get(api_point)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  getUser(id): Observable<User[]> {
+    const api_point = 'http://127.0.0.1:3000/user/' + id;
+    return this.http.get(api_point)
       .map(this.extractData)
       .catch(this.handleError);
   }

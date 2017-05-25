@@ -7,8 +7,22 @@ export interface Contact {
 }
 
 
-export interface Post {
+export interface Story {
   _id: string;
   title: string;
+  created_at: Date;
   body: string;
+  tags: string[];
+  titlethemebyuserid: string;
+  readscount: number;
+  commentscount: number;
+  likescount: number;
+}
+
+export interface User {
+  _id: string;
+  firstname: string;
+  lastname: string;
+  location: string;
+  bio: string;
 }
